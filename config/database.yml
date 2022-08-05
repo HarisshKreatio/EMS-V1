@@ -13,8 +13,8 @@ default: &default
   adapter: postgresql
   encoding: utf-8
   host: localhost
-  username: harissh
-  password: 12345678Q
+  username: postgres
+  password: <%= ENV['MyDatabase_Password'] %>
   port: 5432
 
 development:
@@ -29,13 +29,5 @@ test:
   database: db_test
 
 production:
-    adapter: postgresql
-    encoding: unicode
-    database: my_db
-    host: localhost
-    pool: 5
-    username: postgres
-    password: <%= ENV['MyDatabase_Password'] %>
-    role: MyRole
-
-
+  <<: *default
+  database: my_db
