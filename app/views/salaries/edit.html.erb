@@ -1,0 +1,97 @@
+<div class="container py-5 h-50 w-50">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div>
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center" >
+          <h2 class="fw-bold mb-2 text-uppercase">Edit Salary</h2>
+          <div class="mb-md-5 mt-md-4 pb-5">
+
+
+            <%= form_with model: @salary do |f| %>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :basic_pay %><br />
+                <%= f.text_field :basic_pay, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :hra %><br />
+                <%= f.text_field :hra, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :statutory_bonus %><br />
+                <%= f.text_field :statutory_bonus, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :special_allowance %><br />
+                <%= f.text_field :special_allowance, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update" , class:"btn btn-success" %>
+              </div>
+            <% end %>
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Salary Details</h1>-->
+
+<%#= form_with(scope: :qualifications,url: qualification_path(@qualifications), method: :put , local: true ) do |f| %>
+<%#= form_with model: @salary do |f| %>
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :basic_pay %><br />-->
+    <%#= f.text_field :basic_pay, autofocus: true, autocomplete: "basic_pay" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :hra %><br />-->
+    <%#= f.text_field :hra, autofocus: true, autocomplete: "hra" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :statutory_bonus %><br />-->
+    <%#= f.text_field :statutory_bonus, autofocus: true, autocomplete: "statutory_bonus" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :special_allowance %><br />-->
+    <%#= f.text_field :special_allowance, autofocus: true, autocomplete: "special_allowance" %>
+<!--  </div>-->
+
+
+  <%#= f.number_field :employee_id, value: @salary.employee.id, type: :hidden %>
+  <%#= @qualification.employee.id %>
+
+<!--  <div class="actions">-->
+    <%#= f.submit %>
+<!--  </div>-->
+
+<%# end %>

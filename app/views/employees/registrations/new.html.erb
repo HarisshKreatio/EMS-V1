@@ -1,0 +1,168 @@
+<% if admin_signed_in? %>
+<div class="container py-5 h-50 w-50">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div>
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center" >
+          <h2 class="fw-bold mb-2 text-uppercase">Add Employee</h2>
+          <div class="mb-md-5 mt-md-4 pb-5">
+
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render "employees/shared/error_messages", resource: resource %>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.text_field :name, class:"form-label form-control form-control-lg", placeholder: "Name"  %>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.text_field :phone_number, class:"form-label form-control form-control-lg", placeholder: "Phone number"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.date_field :dob, class:"form-label form-control form-control-lg", placeholder: "dob"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.email_field :email, class:"form-label form-control form-control-lg", placeholder: "email"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.password_field :password, class:"form-label form-control form-control-lg", value: "12345678", placeholder: "Password" %>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.password_field :password_confirmation, class:"form-label form-control form-control-lg", value: "12345678", placeholder: "Confirm password" %>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :gender %><br />
+                <%= f.select :gender, ['None', 'Male', 'Female', 'Others']%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :martial_status %><br />
+                <%= f.select :martial_status, ['None','Single', 'Married']%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.text_field :blood_group, class:"form-label form-control form-control-lg", placeholder: "Blood group"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.text_field :fathers_name, class:"form-label form-control form-control-lg", placeholder: "Father's name"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.telephone_field :mothers_name, class:"form-label form-control form-control-lg", placeholder: "Mother's name"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.text_field :address, class:"form-label form-control form-control-lg", placeholder: "Address"%>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Add" , class:"btn btn-success" %>
+              </div>
+            <% end %>
+
+            <%#= render "employees/shared/links" %>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% else %>
+  <%= controller.redirect_to new_admin_session_path %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h2>Sign up</h2>-->
+
+<%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%#= render "employees/shared/error_messages", resource: resource %>
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :name %><br/>-->
+    <%#= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :phone_number %><br />-->
+    <%#= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :dob %><br />-->
+    <%#= f.date_field :dob, autofocus: true, autocomplete: "dob" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :email %><br />-->
+    <%#= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+    <%#= f.label :password %>
+    <%# if @minimum_password_length %>
+<!--      <em>(<%#= @minimum_password_length %> characters minimum)</em>-->
+<!--    <%# end %><br />-->
+    <%#= f.password_field :password, autocomplete: "new-password", value: "12345678" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :password_confirmation %><br />-->
+    <%#= f.password_field :password_confirmation, autocomplete: "new-password", value: "12345678" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :gender %><br />-->
+    <%#= f.select :gender, ['None', 'Male', 'Female', 'Others']%>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :martial_status %><br />-->
+    <%#= f.select :martial_status, ['None','Single', 'Married']%>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :blood_group %><br />-->
+    <%#= f.text_field :blood_group, autofocus: true, autocomplete: "blood_group" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :fathers_name %><br />-->
+    <%#= f.text_field :fathers_name, autofocus: true, autocomplete: "fathers_name" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :mothers_name %><br />-->
+    <%#= f.telephone_field :mothers_name, autofocus: true, autocomplete: "mothers_name" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :address %><br />-->
+    <%#= f.text_field :address, autofocus: true, autocomplete: "address" %>
+<!--  </div>-->
+  <%#= @employee.inspect %>
+<!--  <div class="actions">-->
+    <%#= f.submit "Sign up" %>
+<!--  </div>-->
+<%# end %>
+
+<%#= render "employees/shared/links" %>

@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <%#= link_to 'EMS', root_path, class:"navbar-brand"%>
+    <%= link_to href = root_path, class:"navbar-brand" do%>
+    <%= image_tag "ems3.png", height: 35, class:"navbar-brand" %>
+      <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <!--          <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+          <% if employee_signed_in? %>
+            <%= link_to 'Leave status', status_leave_status_path, class:"nav-link active" %>
+          <% end  %>
+        </li>
+        <li class="nav-item ">
+<!--          <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+          <% if employee_signed_in? %>
+            <%= link_to 'Logout', destroy_employee_session_path, method: :delete, class:"nav-link active " %>
+          <% end  %>
+        </li>
+<!--        <li class="nav-item ">-->
+          <%# if admin_signed_in? %>
+            <%#= link_to 'Edit profile', edit_admin_registration_path, class:"nav-link active"%>
+          <%# end %>
+<!--        </li>-->
+
+        <% leave_count =  Leave.where(status: "Pending").count.to_s %>
+
+        <li class="nav-item">
+          <% if admin_signed_in? %>
+            <%= link_to 'Leave Approval (' + leave_count +')', approve_dashboard_path, class:"nav-link active" %>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <% if admin_signed_in? %>
+            <%= link_to 'Logout', destroy_admin_session_path, method: :delete, class:"nav-link active" %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<%#= link_to 'Home page', root_path %>
+
+<%# if employee_signed_in? %>
+  <%#= link_to 'Logout', destroy_employee_session_path, method: :delete %>
+<%# end  %>
+
+<%# if admin_signed_in? %>
+  <%#= link_to 'Logout', destroy_admin_session_path, method: :delete %>
+  <%#= link_to 'Edit profile', edit_admin_registration_path%>
+<%# end %>

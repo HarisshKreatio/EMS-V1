@@ -1,0 +1,124 @@
+<div class="container py-5 h-50 w-50">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div>
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center" >
+          <h2 class="fw-bold mb-2 text-uppercase">Edit Leave</h2>
+          <div class="mb-md-5 mt-md-4 pb-5">
+
+
+            <%= form_with model: @leave do |f| %>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :sick %><br />
+                <%= f.text_field :sick, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :privileged %><br />
+                <%= f.text_field :privileged, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :breavement %><br />
+                <%= f.text_field :breavement, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :study_leave %><br />
+                <%= f.text_field :study_leave, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :time_off %><br />
+                <%= f.text_field :time_off, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :maternity %><br />
+                <%= f.text_field :maternity, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :paternity %><br />
+                <%= f.telephone_field :paternity, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :optional %><br />
+                <%= f.text_field :optional, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update" , class:"btn btn-success" %>
+              </div>
+            <% end %>
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Leave Details</h1>-->
+
+<%#= form_with(scope: :qualifications,url: qualification_path(@qualifications), method: :put , local: true ) do |f| %>
+<%#= form_with model: @leave do |f| %>
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :sick %><br />-->
+    <%#= f.number_field :sick, autofocus: true, autocomplete: "sick" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :privileged %><br />-->
+    <%#= f.number_field :privileged, autofocus: true, autocomplete: "privileged" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :breavement %><br />-->
+    <%#= f.number_field :breavement, autofocus: true, autocomplete: "breavement" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :study_leave %><br />-->
+    <%#= f.number_field :study_leave, autofocus: true, autocomplete: "study_leave" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :time_off %><br />-->
+    <%#= f.number_field :time_off, autofocus: true, autocomplete: "time_off" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :maternity %><br />-->
+    <%#= f.number_field :maternity, autofocus: true, autocomplete: "maternity" %>
+<!--  </div>-->
+<!--  <div class="field">-->
+<!--    <%#= f.label :paternity %><br />-->
+    <%#= f.number_field :paternity, autofocus: true, autocomplete: "paternity" %>
+<!--  </div>-->
+
+<!--  <div class="field">-->
+<!--    <%#= f.label :optional %><br />-->
+    <%#= f.number_field :optional, autofocus: true, autocomplete: "optional" %>
+<!--  </div>-->
+
+  <%#= f.number_field :employee_id, value: @leave.employee.id, type: :hidden %>
+
+<!--  <div class="actions">-->
+    <%#= f.submit %>
+<!--  </div>-->
+
+<%# end %>

@@ -1,0 +1,89 @@
+<section class="gradient-custom-blue">
+  <br>
+  <h3 class="mb-3 text-md-center">Approval dashboard</h3>
+  <% @approvals.each do |approval| %>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-5">
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3"><%= Employee.find(approval.employee_id).name %></h3>
+
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <% unless @approvals.empty? %>
+
+                <div class="text-md-center">
+
+                    <%= form_tag({controller: "approve", action: "update"}, method: "put") do %>
+                      <p><strong>Leave Type:</strong> <%= approval.type_of_leave %></p>
+                      <p><strong>No of days:</strong> <%= approval.days %></p>
+                      <p><strong>From Date:</strong> <%= approval.from_date %></p>
+                      <p><strong>To Date:</strong> <%= approval.to_date %></p>
+                      <%= hidden_field_tag :employee_id, approval.employee_id %>
+                      <%= select_tag(:approval_status, options_for_select([["Approve","Approved"],["Deny","Denied"]], params[:approval_status] ), class:"select") %>
+                      <br> <br>
+                      <%= submit_tag "Okay" , class:"btn btn-success"%>
+                    <% end %>
+
+
+                </div>
+
+              <% else %>
+                <div class="text-md-center">
+                  <h1>No approvals</h1>
+                </div>
+              <% end %>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <% end %>
+</section>
+
+
+
+
+
+
+
+
+<%# unless @approvals.empty? %>
+
+<!--<div class="text-md-center">-->
+<!--<h1>Approval dashboard</h1>-->
+
+<%#= form_tag({controller: "approve", action: "update"}, method: "put") do %>
+
+<%# @approvals.each do |approval| %>
+      <%#= form_tag({controller: "approve", action: "update"}, method: "put") do %>
+<!--      <br><br>-->
+<!--      <p><strong>Employee name: </strong><%#= Employee.find(approval.employee_id).name %></p>-->
+<!--  <p><strong>Leave Type:</strong> <%#= approval.type_of_leave %></p>-->
+<!--  <p><strong>No of days:</strong> <%#= approval.days %></p>-->
+<!--  <p><strong>From Date:</strong> <%#= approval.from_date %></p>-->
+<!--  <p><strong>To Date:</strong> <%#= approval.to_date %></p>-->
+      <%#= hidden_field_tag :employee_id, approval.employee_id %>
+      <%#= approval.employee_id %>
+      <%#= select_tag(:approval_status, options_for_select([["Approve","Approved"],["Deny","Denied"]], params[:approval_status] ), class:"select") %>
+<!--      <br>-->
+      <%#= submit_tag "Okay"%>
+<%# end %>
+<%# end %>
+
+<!--</div>-->
+
+<%# else %>
+<!--  <div class="text-md-center">-->
+<!--  <h1>No approvals</h1>-->
+<!--  </div>-->
+<%# end %>

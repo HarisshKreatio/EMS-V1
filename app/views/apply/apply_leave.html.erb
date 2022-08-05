@@ -1,0 +1,75 @@
+<section class="gradient-custom-blue">
+  <br>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-5">
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3">Apply Leave</h3>
+
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <%= form_tag({controller: "apply", action: "update"}, method: "put") do %>
+
+                <label>Leave type:</label><br>
+                <%= select_tag(:type_of_leave, options_for_select([["Sick","sick"],["Privileged","privileged"],["Breavement","breavement"],["Study leave","study_leave"],["Time off","time_off"],["Maternity","maternity"],["Paternity","paternity"],["Optional","optional"]], params[:type_of_leave] ), class:"select") %>
+                <br>
+                <br>
+
+                <div class="form-outline form-white mb-4">
+                <label>No of days:</label><br>
+                <%= text_field_tag :days%><br>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                <label>From date:</label><br>
+                <%= date_field_tag :from_date %><br>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                <label>To date:</label><br>
+                <%= date_field_tag :to_date %><br>
+                </div>
+
+                <%= submit_tag "Apply" , class:"btn btn-success" %>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<!--<div class="text-md-center">-->
+  <%#= form_tag({controller: "apply", action: "update"}, method: "put") do %>
+
+<!--    <label>Leave type:</label><br>-->
+    <%#= select_tag(:type_of_leave, options_for_select([["Sick","sick"],["Privileged","privileged"],["Breavement","breavement"],["Study leave","study_leave"],["Time off","time_off"],["Maternity","maternity"],["Paternity","paternity"],["Optional","optional"]], params[:type_of_leave] ), class:"select") %>
+<!--    <br>-->
+<!--    <label>No of days:</label><br>-->
+<!--    <%#= text_field_tag :days %><br>-->
+
+<!--    <label>From date:</label><br>-->
+<!--    <%#= date_field_tag :from_date %><br>-->
+
+<!--    <label>To date:</label><br>-->
+<!--    <%#= date_field_tag :to_date %><br>-->
+
+    <%#= submit_tag %>
+
+  <%# end %>
+<!--</div>-->

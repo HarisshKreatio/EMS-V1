@@ -1,0 +1,31 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.gradient-custom-blue{
+  background-color: #5f59f7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.navbar-nav {
+  margin-left: auto;
+
+}

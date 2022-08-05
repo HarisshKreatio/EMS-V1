@@ -1,0 +1,83 @@
+<section class="gradient-custom-blue">
+  <br>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-5">
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3">Leave Status</h3>
+
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <% unless @leave.nil? %>
+
+                <div class="text-md-center">
+                  <%= form_tag({controller: "status", action: "update"}, method: "put") do %>
+                    <p><strong>Leave Type:</strong> <%= @leave.type_of_leave %></p>
+                    <p><strong>No of days:</strong> <%= @leave.days %></p>
+                    <p><strong>From Date:</strong> <%= @leave.from_date %></p>
+                    <p><strong>To Date:</strong> <%= @leave.to_date %></p>
+                    <p><strong>Status:</strong> <%= @leave.status %></p>
+                    <% unless @leave.status == "Pending" %>
+                      <%= submit_tag "Okay", class:"btn btn-success"%>
+                    <% end %>
+                  <% end %>
+                </div>
+
+              <% else %>
+                <div class="text-md-center">
+                  <h4>No applied Leaves</h4>
+                </div>
+              <% end %>
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<%# unless @leave.nil? %>
+
+<!--<div class="text-md-center">-->
+<!--<h1>Leave Status</h1>-->
+  <%#= form_tag({controller: "status", action: "update"}, method: "put") do %>
+<!--  <p><strong>Leave Type:</strong> <%#= @leave.type_of_leave %></p>-->
+<!--  <p><strong>No of days:</strong> <%#= @leave.days %></p>-->
+<!--  <p><strong>From Date:</strong> <%#= @leave.from_date %></p>-->
+<!--  <p><strong>To Date:</strong> <%#= @leave.to_date %></p>-->
+<!--    <p><strong>Status:</strong> <%#= @leave.status %></p>-->
+    <%# unless @leave.status == "Pending" %>
+  <%#= submit_tag "Okay"%>
+      <%# end %>
+<%# end %>
+<!--</div>-->
+
+<%# else %>
+<!--  <div class="text-md-center">-->
+<!--    <h1>No applied Leaves</h1>-->
+<!--  </div>-->
+<%# end %>

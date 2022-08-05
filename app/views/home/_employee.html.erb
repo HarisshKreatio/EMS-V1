@@ -1,0 +1,73 @@
+<div class="container py-5 h-50">
+  <div class="row d-flex justify-content-center align-items-center h-100 ">
+    <div>
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center" >
+          <h2 class="fw-bold mb-2 text-uppercase">Employees</h2>
+          <div class="mb-md-5 mt-md-4 pb-5">
+
+            <table  class="text-light table table-dark table-hover table-bordered table-responsive table-striped">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th colspan="3">Actions</th>
+              </tr>
+              </thead>
+
+              <tbody >
+              <% @employees.each do |employee| %>
+                <tr>
+                  <td><%= employee.name %> </td>
+                  <td> <%= employee.phone_number %> </td>
+                  <td> <%= employee.email %> </td>
+                  <td> <%= link_to 'View', home_path(employee.id), class:"btn btn-success"%> </td>
+                  <td> <%= link_to 'Edit', edit_home_path(employee.id), class:"btn btn-info"%> </td>
+                  <td> <%= button_to 'Delete',home_path(employee.id),data: { confirm: "This will delete the Employee. Are you sure?" }, method: :delete, class:"btn btn-danger" %> </td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+            <br>
+            <%= link_to 'Add new Employee', new_employee_registration_path, class:"btn btn-primary" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--<table  class="text-light table">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>Name</th>-->
+<!--    <th>Phone Number</th>-->
+<!--    <th>Email</th>-->
+<!--    <th colspan="3">Actions</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody>-->
+  <%# @employees.each do |employee| %>
+<!--    <tr>-->
+<!--      <td><%#= employee.name %> </td>-->
+<!--      <td> <%#= employee.phone_number %> </td>-->
+<!--      <td> <%#= employee.email %> </td>-->
+<!--      <td> <%#= link_to 'Show', home_path(employee.id)%> </td>-->
+<!--      <td> <%#= link_to 'Edit', edit_home_path(employee.id)%> </td>-->
+<!--      <td> <%#= button_to 'Delete',home_path(employee.id),data: { confirm: "This will delete the Employee. Are you sure?" }, method: :delete %> </td>-->
+<!--    </tr>-->
+  <%# end %>
+<!--  </tbody>-->
+<!--</table>-->
+<%#= link_to 'Add new Employee', new_employee_registration_path %>

@@ -1,0 +1,273 @@
+<section class="gradient-custom-blue">
+  <br>
+  <h2 class="fw-bold mb-2 text-uppercase text-md-center"><%= @employee.name %> details</h2>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-5">
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3">Basic Details</h3>
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                  <th>Name:</th>
+                  <td><%= @employee.name %></td>
+                </tr>
+                <tr>
+                  <th>Date of Birth:</th>
+                  <td><%= @employee.dob %></td>
+                </tr>
+                <tr>
+                  <th>Phone number:</th>
+                  <td><%= @employee.phone_number %></td>
+                </tr>
+                <tr>
+                  <th>Email:</th>
+                  <td><%= @employee.email %></td>
+                </tr>
+                <tr>
+                  <th>Gender:</th>
+                  <td><%= @employee.gender %></td>
+                </tr>
+                <tr>
+                  <th>Martial Status:</th>
+                  <td><%= @employee.martial_status %></td>
+                </tr>
+                <tr>
+                  <th>Blood Group:</th>
+                  <td><%= @employee.blood_group %></td>
+                </tr>
+                <tr>
+                  <th>Father's Name:</th>
+                  <td><%= @employee.fathers_name %></td>
+                </tr>
+                <tr>
+                  <th>Mother's Name:</th>
+                  <td><%= @employee.mothers_name %></td>
+                </tr>
+                <tr>
+                  <th>Address:</th>
+                  <td><%= @employee.address %></td>
+                </tr>
+
+                </tbody>
+              </table>
+              <td> <%= link_to 'Edit', edit_home_path(@employee.id), class:"btn btn-secondary"%> </td>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3">Qualification</h3>
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                  <th>Designation:</th>
+                  <td><%= @employee.qualification.designation %></td>
+                </tr>
+                <tr>
+                  <th>Experience:</th>
+                  <td><%= @employee.qualification.experience %></td>
+                </tr>
+                <tr>
+                  <th>PG CGPA:</th>
+                  <td><%= @employee.qualification.pg_cgpa %></td>
+                </tr>
+                <tr>
+                  <th>PG year:</th>
+                  <td><%= @employee.qualification.pg_year %></td>
+                </tr>
+                <tr>
+                  <th>UG CGPA:</th>
+                  <td><%= @employee.qualification.ug_cgpa %></td>
+                </tr>
+                <tr>
+                  <th>UG year:</th>
+                  <td><%= @employee.qualification.ug_year %></td>
+                </tr>
+                <tr>
+                  <th>Diploma CGPA:</th>
+                  <td><%= @employee.qualification.diploma_cgpa %></td>
+                </tr>
+                <tr>
+                  <th>Diploma year:</th>
+                  <td><%= @employee.qualification.diploma_year %></td>
+                </tr>
+                <tr>
+                  <th>12th percentage:</th>
+                  <td><%= @employee.qualification.twelve_th_percent %></td>
+                </tr>
+                <tr>
+                  <th>12th year:</th>
+                  <td><%= @employee.qualification.twelve_th_year %></td>
+                </tr>
+                <tr>
+                  <th>10th percentage:</th>
+                  <td><%= @employee.qualification.ten_th_percent %></td>
+                </tr>
+                <tr>
+                  <th>10th year:</th>
+                  <td><%= @employee.qualification.ten_th_year %></td>
+                </tr>
+
+                </tbody>
+              </table>
+              <%= link_to 'Edit', edit_qualification_path(@employee.qualification.id), class:"btn btn-secondary" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3">Remaining Leaves</h3>
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                  <th>Sick:</th>
+                  <td><%= @employee.leave.sick %></td>
+                </tr>
+                <tr>
+                  <th>Privileged:</th>
+                  <td><%= @employee.leave.privileged %></td>
+                </tr>
+                <tr>
+                  <th>Breavement:</th>
+                  <td><%= @employee.leave.breavement %></td>
+                </tr>
+                <tr>
+                  <th>Study leave:</th>
+                  <td><%= @employee.leave.study_leave %></td>
+                </tr>
+                <tr>
+                  <th>Time off:</th>
+                  <td><%= @employee.leave.time_off %></td>
+                </tr>
+                <tr>
+                  <th>Maternity:</th>
+                  <td><%= @employee.leave.maternity %></td>
+                </tr>
+                <tr>
+                  <th>Paternity:</th>
+                  <td><%= @employee.leave.paternity %></td>
+                </tr>
+                <tr>
+                  <th>Optional:</th>
+                  <td><%= @employee.leave.optional %></td>
+                </tr>
+                <tr>
+                  <th>Total leaves:</th>
+                  <td><%= @total_leave %></td>
+                </tr>
+
+
+                </tbody>
+              </table>
+              <%= link_to 'Edit', edit_leafe_path(@employee.leave.id), type:"button", class:"btn btn-secondary" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-5" style="border-radius: 15px;">
+          <div class="card-body p-4 text-md-center">
+            <h3 class="mb-3">Salary</h3>
+            <hr class="my-4">
+            <div class="justify-content-start align-items-center text-md-center">
+
+              <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                  <th>Basic pay:</th>
+                  <td><%= @employee.salary.basic_pay %> Rs</td>
+                </tr>
+                <tr>
+                  <th>HRA:</th>
+                  <td><%= @employee.salary.hra %> Rs</td>
+                </tr>
+                <tr>
+                  <th>Statutory bonus:</th>
+                  <td><%= @employee.salary.statutory_bonus %> Rs</td>
+                </tr>
+                <tr>
+                  <th>Special allowance:</th>
+                  <td><%= @employee.salary.special_allowance %> Rs</td>
+                </tr>
+                <tr>
+                  <th>Total salary:</th>
+                  <td><%= @total_salary %> Rs</td>
+                </tr>
+
+                </tbody>
+              </table>
+              <%= link_to 'Edit', edit_salary_path(@employee.salary.id), type:"button", class:"btn btn-secondary" %>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!--<h1><%#= @employee.name %> details </h1>-->
+
+<!--<h1>Basic Details</h1>-->
+<!--<p><strong>Name: </strong> <%#= @employee.name %> </p>-->
+<!--<p><strong>Date of Birth: </strong> <%#= @employee.dob %> </p>-->
+<!--<p><strong>Phone_number: </strong> <%#= @employee.phone_number %> </p>-->
+<!--<p><strong>Email: </strong> <%#= @employee.email %> </p>-->
+<!--<p><strong>Gender: </strong> <%#= @employee.gender %> </p>-->
+<!--<p><strong>Martial Status: </strong> <%#= @employee.martial_status %> </p>-->
+<!--<p><strong>Blood Group: </strong> <%#= @employee.blood_group %> </p>-->
+<!--<p><strong>Father's Name: </strong> <%#= @employee.fathers_name %> </p>-->
+<!--<p><strong>Mother's Name: </strong> <%#= @employee.mothers_name %> </p>-->
+<!--<p><strong>Address: </strong> <%#= @employee.address %> </p>-->
+
+<!--<h1>Qualification</h1>-->
+<!--<p><strong>Designation: </strong> <%#= @employee.qualification.designation %> </p>-->
+<!--<p><strong>Experience: </strong> <%#= @employee.qualification.experience %> </p>-->
+<!--<p><strong>PG CGPA: </strong> <%#= @employee.qualification.pg_cgpa %> </p>-->
+<!--<p><strong>PG year: </strong> <%#= @employee.qualification.pg_year %> </p>-->
+<!--<p><strong>UG CGPA: </strong> <%#= @employee.qualification.ug_cgpa %> </p>-->
+<!--<p><strong>UG year: </strong> <%#= @employee.qualification.ug_year %> </p>-->
+<!--<p><strong>Diploma CGPA: </strong> <%#= @employee.qualification.diploma_cgpa %> </p>-->
+<!--<p><strong>Diploma year: </strong> <%#= @employee.qualification.diploma_year %> </p>-->
+<!--<p><strong>12th CGPA: </strong> <%#= @employee.qualification.twelve_th_percent %> </p>-->
+<!--<p><strong>12th year: </strong> <%#= @employee.qualification.twelve_th_year %> </p>-->
+<!--<p><strong>10th CGPA: </strong> <%#= @employee.qualification.ten_th_percent %> </p>-->
+<!--<p><strong>10th year: </strong> <%#= @employee.qualification.ten_th_year %> </p>-->
+
+<!--<h1>Remaining Leaves</h1>-->
+<!--<p><strong>Sick: </strong> <%#= @employee.leave.sick %> </p>-->
+<!--<p><strong>Privileged: </strong> <%#= @employee.leave.privileged %> </p>-->
+<!--<p><strong>Breavement: </strong> <%#= @employee.leave.breavement %> </p>-->
+<!--<p><strong>Study leave: </strong> <%#= @employee.leave.study_leave %> </p>-->
+<!--<p><strong>Time off: </strong> <%#= @employee.leave.time_off %> </p>-->
+<!--<p><strong>Maternity: </strong> <%#= @employee.leave.maternity %> </p>-->
+<!--<p><strong>Paternity: </strong> <%#= @employee.leave.paternity %> </p>-->
+<!--<p><strong>Optional: </strong> <%#= @employee.leave.optional %> </p>-->
+<!--<p><strong>Total leaves: </strong> <%#= @total_leave %> </p>-->
+
+<!--<h1>Salary details</h1>-->
+<!--<p><strong>Basic pay: </strong> <%#= @employee.salary.basic_pay %> </p>-->
+<!--<p><strong>HRA: </strong> <%#= @employee.salary.hra %> </p>-->
+<!--<p><strong>Statutory bonus: </strong> <%#= @employee.salary.statutory_bonus %> </p>-->
+<!--<p><strong>Special allowance: </strong> <%#= @employee.salary.special_allowance %> </p>-->
+<!--<p><strong>Total salary: </strong> <%#= @total_salary %> </p>-->
+<!--<br>-->
+

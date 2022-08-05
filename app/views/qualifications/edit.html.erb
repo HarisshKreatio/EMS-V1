@@ -1,0 +1,168 @@
+<div class="container py-5 h-50 w-50">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div>
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 text-center" >
+          <h2 class="fw-bold mb-2 text-uppercase">Edit Qualification Details</h2>
+          <div class="mb-md-5 mt-md-4 pb-5">
+
+
+            <%= form_with model: @qualification do |f| %>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :designation %><br />
+                <%= f.text_field :designation, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :experience %><br />
+                <%= f.text_field :experience, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :pg_cgpa %><br />
+                <%= f.text_field :pg_cgpa, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :pg_year %><br />
+                <%= f.text_field :pg_year, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :ug_cgpa %><br />
+                <%= f.text_field :ug_cgpa, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :ug_year %><br />
+                <%= f.text_field :ug_year, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :diploma_cgpa %><br />
+                <%= f.telephone_field :diploma_cgpa, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :diploma_year %><br />
+                <%= f.text_field :diploma_year, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :twelve_th_percent %><br />
+                <%= f.text_field :twelve_th_percent, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :twelve_th_year %><br />
+                <%= f.text_field :twelve_th_year, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :ten_th_percent %><br />
+                <%= f.text_field :ten_th_percent, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <%= f.label :ten_th_year %><br />
+                <%= f.text_field :ten_th_year, class:"form-label form-control form-control-lg"%>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update" , class:"btn btn-success" %>
+              </div>
+            <% end %>
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>Qualification Details</h1>-->
+
+<%#= form_with(scope: :qualifications,url: qualification_path(@qualifications), method: :put , local: true ) do |f| %>
+<%#= form_with model: @qualification do |f| %>
+
+<!--<div class="field">-->
+<!--  <%#= f.label :designation %><br />-->
+  <%#= f.text_field :designation, autofocus: true, autocomplete: "designation" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :experience %><br />-->
+  <%#= f.text_field :experience, autofocus: true, autocomplete: "experience" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :pg_cgpa %><br />-->
+  <%#= f.text_field :pg_cgpa, autofocus: true, autocomplete: "pg_cgpa" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :pg_year %><br />-->
+  <%#= f.text_field :pg_year, autofocus: true, autocomplete: "pg_year" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :ug_cgpa %><br />-->
+  <%#= f.text_field :ug_cgpa, autofocus: true, autocomplete: "ug_cgpa" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :ug_year %><br />-->
+  <%#= f.text_field :ug_year, autofocus: true, autocomplete: "ug_year" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :diploma_cgpa %><br />-->
+  <%#= f.text_field :diploma_cgpa, autofocus: true, autocomplete: "diploma_cgpa" %>
+<!--</div>-->
+
+<!--<div class="field">-->
+<!--  <%#= f.label :diploma_year %><br />-->
+  <%#= f.text_field :diploma_year, autofocus: true, autocomplete: "diploma_year" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :twelve_th_percent %><br />-->
+  <%#= f.text_field :twelve_th_percent, autofocus: true, autocomplete: "twelve_th_percent" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :twelve_th_year %><br />-->
+  <%#= f.text_field :twelve_th_year, autofocus: true, autocomplete: "twelve_th_year" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :ten_th_percent %><br />-->
+  <%#= f.text_field :ten_th_percent, autofocus: true, autocomplete: "ten_th_percent" %>
+<!--</div>-->
+<!--<div class="field">-->
+<!--  <%#= f.label :ten_th_year %><br />-->
+  <%#= f.text_field :ten_th_year, autofocus: true, autocomplete: "ten_th_year" %>
+<!--</div>-->
+
+<%#= f.number_field :employee_id, value: @qualification.employee.id, type: :hidden %>
+ <%#= @qualification.employee.id %>
+
+<!--  <div class="actions">-->
+    <%#= f.submit %>
+<!--  </div>-->
+
+<%# end %>
